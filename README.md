@@ -1,6 +1,6 @@
-# Use retail_db data set
+# Projects of CCA175
 
-## Task I
+## Task I: Insight of retail_db 
 - Get daily revenue by product considering completed and closed orders.
 - Data need to be sorted in ascending order by date and then descending
 - order by revenue computed for each product for each day.
