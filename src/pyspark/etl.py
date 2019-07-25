@@ -6,6 +6,13 @@ pyspark --master yarn \
   --packages com.databricks:spark-avro_2.10:2.0.1
 
 """
+
+from pyspark import SparktConf, SparkContext
+conf = SparkConf().\
+    setAppName('Daily Ravenue Per Product').\
+    setMaster('yarn-client')
+sc = SparkContext(conf=conf)
+
 # `filter all order is closed/complete
 orders = sc.textFile("/public/retail_db/orders")
 orderItems = sc.textFile("/public/retail_db/order_items")
