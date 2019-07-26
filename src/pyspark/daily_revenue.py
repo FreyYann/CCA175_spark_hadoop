@@ -81,3 +81,13 @@ orderItems.\
 orders.groupBy('order_status').\
     count().\
     show()
+
+
+orders.groupBy('order_date,order_item_product_id').\
+    agg(round(sum('order_item_subtotal', 2)).alias('product_revenue')).\
+    show()
+
+# 0,1 indicate whther the ith col ascending
+orders.sort(['order_date', 'order_customer_id'], ascending=[0, 1]).show()
+
+orders.sortWithinPartition('order_date', 'order_customer_id').show()
