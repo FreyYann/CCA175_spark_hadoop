@@ -70,3 +70,5 @@ Output Fields: Crime Type, Number of Incidents
 Output File Format: JSON
 Output Delimiter: N/A
 Output Compression: No
+
+## Exercise 04 - Convert nyse data to parquet
