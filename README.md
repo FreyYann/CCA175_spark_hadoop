@@ -47,7 +47,7 @@ Store the result in HDFS path /user/<YOUR_USER_ID>/solutions/solution01/crimes_b
 - Output Delimiter: \t (tab delimited)
 - Output Compression: gzip
 
-## Get details of inactive customers
+## Excersice 2 Get details of inactive customers
 - Source directories: /data/retail_db/orders and /data/retail_db/customers
 - Source delimiter: comma (“,”)
 - Source Columns - orders - order_id, order_date, order_customer_id, order_status
@@ -58,3 +58,15 @@ Source Columns - customers - customer_id, customer_fname, customer_lname and man
 - Target File Format: TEXT
 Target Delimiter: comma (“, ”)
 - Compression: N/A
+
+## Excersice 3 Get top 3 crime 
+Data is available in HDFS file system under /public/crime/csv
+Structure of data (ID,Case Number,Date,Block,IUCR,Primary Type,Description,Location Description,Arrest,Domestic,Beat,District,Ward,Community Area,FBI Code,X Coordinate,Y Coordinate,Year,Updated On,Latitude,Longitude,Location)
+File format - text file
+Delimiter - “,” (use regex while splitting split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1), as there are some fields with comma and enclosed using double quotes.
+Get top 3 crime types based on number of incidents in RESIDENCE area using “Location Description”
+Store the result in HDFS path /user/<YOUR_USER_ID>/solutions/solution03/RESIDENCE_AREA_CRIMINAL_TYPE_DATA
+Output Fields: Crime Type, Number of Incidents
+Output File Format: JSON
+Output Delimiter: N/A
+Output Compression: No
